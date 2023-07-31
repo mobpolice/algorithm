@@ -5,6 +5,7 @@ class Solution {
         for(int i=1;i<=n;i++){
             if(i*i==n){
                 answer = 1;
+                break;
             }
         }
         
