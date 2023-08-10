@@ -1,18 +1,17 @@
 import java.util.*;
 
 class Solution {
-    public long[] solution(long n) {
-        ArrayList<Long> answer = new ArrayList<Long>();
+    public int[] solution(long n) {
+        ArrayList<Integer> answer = new ArrayList<Integer>();
         
-        while(true){
-            answer.add(n%10);
-            if(n/10!=0){
-                n = n/10;
-            }else{
-                break;
-            }
+        String[] strArr = Long.toString(n).split("");
+        
+        for(String str : strArr){
+            answer.add(Integer.parseInt(str));
         }
         
-        return answer.stream().mapToLong(i->i).toArray();
+        Collections.reverse(answer);
+        
+        return answer.stream().mapToInt(i->i).toArray();
     }
 }
